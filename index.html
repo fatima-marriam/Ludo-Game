@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1> LUDO GAME</h1>
+        <div class="lo">
+            <div class="dice">
+                <p>Player 1</p>
+                <img src="./images/dice6.png" alt="Not Found" id="chk1">
+            </div>
+            <div class="dice">
+                <p>Player 2</p>
+                <img src="./images/dice1.png" alt="Not Found" id="chk2">
+            </div>
+        </div>
+        <button onclick="ludo()">Click Me</button>
+    </div>
+
+    <script>
+ludo = () => {
+        const player1 = Math.floor(Math.random() * 6) + 1;
+        const check = `images/dice${player1}.png`;
+        document.getElementById("chk1").setAttribute("src", check);
+
+         const player2 = Math.floor(Math.random() * 6) + 1;
+        const checkk = `images/dice${player2}.png`;
+        document.getElementById("chk2").setAttribute("src", checkk)
+
+if(player1 > player2){
+    document.querySelector('h1').innerHTML="player1 won :)";
+}else if(player1 < player2){
+    document.querySelector('h1').innerHTML="player2 won :)";
+}else{
+    document.querySelector("h1").innerHTML="Draw";
+}
+
+}
+    </script>
+
+
+
+</body>
+
+</html>
